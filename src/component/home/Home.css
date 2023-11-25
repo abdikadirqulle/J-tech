@@ -1,0 +1,18 @@
+@keyframes moveLeftToRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-left-to-right {
+    animation: moveLeftToRight 8s linear infinite;
+  }
+
+
+  .home-bg {
+    background: rgb(74,58,255);
+    background: linear-gradient(123deg, rgba(74,58,255,1) 0%, rgba(55,39,233,1) 98%);
+  }
