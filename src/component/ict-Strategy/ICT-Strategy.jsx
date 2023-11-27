@@ -2,7 +2,7 @@ import React from 'react'
 
 const ICTStrategy = () => {
   return (
-    <div>ICT-Strategy</div>
+    <div className='dark:text-white'>ICT-Strategy coming soon...</div>
   )
 }
 

@@ -13,17 +13,19 @@ export default {
         tertiary: "",
         brand: "()",
         link: "()",
+        dark: "blue-950",
       },
       backgroundColor: {
         primary: "#FCF7FF",
         secondary: "#4A3AFF",
         secondaryA: "()",
         tertiary: "()",
+        dark: "blue-950",
         gradient: "background: rgb(74,58,255),  background: linear-gradient(123deg, rgba(74,58,255,1) 0%, rgba(55,39,233,1) 98%);"
       },
       borderColor: {
-        primary: "()",
-        secondary: "()",
+        primary: "#FCF7FF",
+        secondary: "#4A3AFF",
       },
       ringOffsetColor: {
         primary: "",
