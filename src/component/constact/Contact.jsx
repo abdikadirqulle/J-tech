@@ -49,7 +49,7 @@ const Contact = () => {
                         PHONE
                         <br />
                       </span>
-                      <span className="text-blue-600 dark:text-blue-400">03 5432 1234</span>
+                      <span className="text-blue-600 dark:text-blue-400">+252617797802</span>
                     </div>
                   </div>
                   <div className="items-center flex justify-between gap-4">
@@ -59,7 +59,7 @@ const Contact = () => {
                         FAX
                         <br />
                       </span>
-                      <span className="text-blue-600 dark:text-blue-400">03 5432 1234</span>
+                      <span className="text-blue-600 dark:text-blue-400">+252617797802</span>
                     </div>
                   </div>
                   <div className="items-center flex justify-between gap-4">
@@ -69,7 +69,7 @@ const Contact = () => {
                         EMAIL
                         <br />
                       </span>
-                      <span className="text-blue-600 dark:text-blue-400">info@marcc.com.au</span>
+                      <span className="text-blue-600 dark:text-blue-400">abdikadirqulle@gmail.com</span>
                     </div>
                   </div>
                 </div>
