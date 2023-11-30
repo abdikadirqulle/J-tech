@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Header from "./component/header/Header";
 import { useEffect,  useState } from "react";
+import { useAuth } from "./context/Context";
 
 const App = () => {
   const [hasShadow, setHasShadow] = useState(false);
 
-  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem("theme")));
-
+ const {theme , setTheme} = useAuth()
 
   localStorage.setItem('theme' , JSON.stringify(theme))
   

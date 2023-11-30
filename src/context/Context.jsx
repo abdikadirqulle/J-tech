@@ -15,9 +15,13 @@ export const AuthProvider = ({ children }) => {
       : JSON.parse(localStorage.getItem("currentPage"))
   );
 
+  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem("theme")));
+
   const value = {
     currentPage,
     setCurrentPage,
+    theme,
+    setTheme
   };
 
   localStorage.setItem("currentPage", JSON.stringify(currentPage));

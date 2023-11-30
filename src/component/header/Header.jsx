@@ -8,10 +8,10 @@ import Logo from "../../assets/images/jubbaLogo.png"
 import { useAuth } from '../../context/Context';
 
 
-const Header = ({theme, setTheme }) => {
+const Header = () => {
   const [showMenu ,setShowMenu] = useState(false)
 
-  const { setCurrentPage , currentPage } = useAuth();
+  const { setCurrentPage , currentPage ,theme ,setTheme} = useAuth();
 
   
   window.addEventListener('scroll', function() {
