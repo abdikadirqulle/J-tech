@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className="scroll-smooth bg- dark:bg-blue-950 ">
       <div className={`bg-white dark:bg-blue-950  header  py-2 z-50 fixed w-full ${hasShadow ? " dark:shadow-blue-900  shadow-md": ""}`}>
-      <Header theme={theme} setTheme={setTheme}/>
+      <Header />
     </div>
       <Outlet />
     </div>
