@@ -4,18 +4,26 @@ import { LiaFaxSolid } from "react-icons/lia";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 
-import company from "../../assets/images/techCompany.jpg"
+import company from "../../assets/images/techcompany.jpg"
+
 const Contact = () => {
   return (
-    <div >
-      <div id='contact'  className="bg- dark:bg-blue-950 self-stretch flex w-full flex-col items-center  px-5 py-12 max-md:max-w-full">
+    <div>
+      <div
+        id="contact"
+        className="bg- dark:bg-blue-950 self-stretch flex w-full flex-col items-center  px-5 py-12 max-md:max-w-full"
+      >
         <div className="w-full max-w-[1151px] mt-12 mb-6 max-md:max-w-full max-md:mt-10">
-          <div  className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div  className="flex flex-col  p-2 items-stretch w-6/12 max-md:w-full max-md:ml-0">
+          <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+            <div className="flex flex-col  p-2 items-stretch w-6/12 max-md:w-full max-md:ml-0">
               <div className="items-stretch flex grow flex-col max-md:max-w-full max-md:mt-10">
                 <div className="text-blue-600 text-6xl leading-[63px] whitespace-nowrap max-md:max-w-full max-md:text-4xl max-md:leading-[51px]">
-                  <span className="text-black font-bold dark:text-white">Get in</span>
-                  <span className="text-blue-600 dark:text-yellow-500 font-bold">Touch</span>
+                  <span className="text-black font-bold dark:text-white">
+                    Get in
+                  </span>
+                  <span className="text-blue-600 dark:text-yellow-500 font-bold">
+                    Touch
+                  </span>
                 </div>
                 <div className="text-black dark:text-white text-sm font-semibold leading-6 tracking-normal mt-5 max-md:max-w-full">
                   Efficiency and excellence in operational processes are vital
@@ -51,7 +59,9 @@ const Contact = () => {
                         PHONE
                         <br />
                       </span>
-                      <span className="text-blue-600 dark:text-blue-400">03 5432 1234</span>
+                      <span className="text-blue-600 dark:text-blue-400">
+                        03 5432 1234
+                      </span>
                     </div>
                   </div>
                   <div className="items-center flex justify-between gap-4">
@@ -61,7 +71,9 @@ const Contact = () => {
                         FAX
                         <br />
                       </span>
-                      <span className="text-blue-600 dark:text-blue-400">03 5432 1234</span>
+                      <span className="text-blue-600 dark:text-blue-400">
+                        03 5432 1234
+                      </span>
                     </div>
                   </div>
                   <div className="items-center flex justify-between gap-4">
@@ -71,16 +83,21 @@ const Contact = () => {
                         EMAIL
                         <br />
                       </span>
-                      <span className="text-blue-600 dark:text-blue-400">info@marcc.com.au</span>
+                      <span className="text-blue-600 dark:text-blue-400">
+                        info@marcc.com.au
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="relative flex flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
-              <div className='absolute inset-0 top-0 bg-blue-900/50  rounded-md p-4'>
-              </div>
-             <img src={company} className='object-contain w-full  rounded-md' alt="" />
+              <div className="absolute inset-0 top-0 bg-blue-900/50  rounded-md p-4"></div>
+              <img
+                src={company}
+                className="object-contain w-full  rounded-md"
+                alt="company"
+              />
             </div>
           </div>
         </div>
