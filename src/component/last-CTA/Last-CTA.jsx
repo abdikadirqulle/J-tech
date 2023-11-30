@@ -1,6 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/Context';
 // import { motion } from "framer-motion";
+
 const LastCTA = () => {
+  const {currentPage ,setCurrentPage} = useAuth()
+
   return (
     <div
     initial={{ y: 10, opacity: 0 }}
@@ -15,7 +20,9 @@ const LastCTA = () => {
             Crafting a comprehensive ICT strategy is key to achieving your
             technology objectives
           </h1>
+          <Link to="/contact" onClick={() => setCurrentPage("contact")}>
           <button className=' px-6 py-2 text-sm font-medium bg-white hover:bg-[#EBEBEB] text-black rounded-lg'>Contact Us</button>
+          </Link>
         </div>
       </div>
     </div>

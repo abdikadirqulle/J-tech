@@ -8,8 +8,10 @@ import meta from "../../assets/images/meta.svg"
 import microsoft from "../../assets/images/microsoft.svg"
 import netflix from "../../assets/images/netflix.svg"
 
-import another from "../../assets/images/another.jpg"
+import another from "../../assets/images/visual.jpg"
 import { Link } from 'react-router-dom'
+import { LocalBrands } from '../../../public/LocalBrands'
+import { useAuth } from '../../context/Context'
 export const BigCompanies = [
   {
     name: "netflix",
@@ -42,11 +44,17 @@ export const BigCompanies = [
 ];
   const Home = () => {
 
+    const {currentPage ,setCurrentPage} = useAuth()
+
+    const handelStart = () => {
+      setCurrentPage("contact")
+    }
+
   return (
-    <div className="items-center bg-[#F5F5FE] dark:bg-blue-950 flex w-full flex-col mt- md:pt-14 pb-9 px-5 ">
+    <div className="items-center  dark:bg-blue-950 flex w-full flex-col mt- md:pt-14 pb-9 px-5 ">
       {/* home */}
-      <div className="w-full   mx-auto max-w-6xl">
-        <div className="gap-5 flex max-md:flex-col mt-10 max-md:items-stretch max-md:gap-0">
+      <div className="mx-auto max-w-6xl">
+        <div className="gap-5 flex justify-between  items-center max-md:flex-col mt-10 ">
           {/* tile &subtitle & CTA */}
           <div className="flex flex-col w-[47%] max-md:w-full max-md:ml-0">
             <div className="flex flex-col items-center md:items-start my-auto max-md:max-w-full max-md:mt-10">
@@ -59,25 +67,21 @@ export const BigCompanies = [
                 Revolutionizing Industries with Advanced Technology and Tailored
                 Solutions
               </div>
-              <button className="text-white shadow text-xl font-semibold leading-4 items-center bg-secondary w-[172px] max-w-full mt-10 px-6 py-5 rounded-[8px] max-md:mt-10">
-              <Link to="/contact">
+              <Link to="/contact" onClick={handelStart}>
+                <button className="text-white shadow text-xl font-semibold leading-4 items-center bg-secondary w-[172px] max-w-full mt-10 px-6 py-5 rounded-[8px] max-md:mt-10">
                   Get Started
-                </Link>
-
-              </button>
+                </button>
+              </Link>
             </div>
           </div>
           {/* image */}
-          <div className="flex flex-col items-stretch w-[53%]  max-md:w-full max-md:ml-0">
-            <img
-              src={another}
-              alt="visual"
-              className="w-full grow object-contain rounded-md mt-7 md:mt-0"
-            />
-          </div>
+          <img
+            src={another}
+            alt="visual"
+            className="md:w-[53%] w-full object-contain rounded-md"
+          />
         </div>
       </div>
-      {/* social proof */}
     </div>
   );
 }
@@ -88,13 +92,29 @@ export default Home
 export const CompaniesList = () => {
   return (
     <div className="justify-center items-center mx-auto  overflow-hidden self-center flex w-full max-w-[1152px] flex-col gap-10 px-5 py-10 max-md:max-w-full">
-      <p className="text-center dark:text-white text-black/70 text-[19px] mt-10 font-normal">
+      <p className="text-center dark:text-white text-black/70 text-[19px] mt-10 font-medium">
         Trusted by the biggest companies
       </p>
       <div className=" flex flex-wrap w-full  items-center justify-center gap-10 max-md:max-w-full ">
         {BigCompanies.map((company, e) => (
           <div key={e}>
             <img src={company.image} alt="" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+export const LocalBrand = () => {
+  return (
+    <div className="justify-center items-center mx-auto  overflow-hidden self-center flex w-full max-w-[1152px] flex-col gap-10 px-5 py-10 max-md:max-w-full">
+      <p className="text-center dark:text-white text-black/70 text-[19px] mt-10 font-normal">
+      Start now and join thousands of successful local and global brands with Jubba ICT solutions.
+      </p>
+      <div className="animate-left-to-right  flex  w-full translate-x-2  items-center justify-center gap-10 max-md:max-w-full ">
+        {LocalBrands.map((brand) => (
+          <div key={brand.id} className=' flex'>
+            <img src={brand.image} alt=""  className='-4'/>
           </div>
         ))}
       </div>

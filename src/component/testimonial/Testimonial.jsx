@@ -32,12 +32,12 @@ const Testimonial = () => {
     },
   ]
   return (
-    <div className=" w-full max-w-6xl xl:mx-auto m">
-      <div>
-        <h3 className="text-center font-medium text-[19px] text-secondary">
+    <div className="flex flex-col gap-10">
+      <div className='flex flex-col gap-2'>
+        <h3 className="text-secondary dark:text-yellow-500 font-semibold text-2xl text-center">
           Testimonials
         </h3>
-        <p className="text-center pt-5 pb-10 dark:text-white">
+        <p className="text-center  dark:text-white">
           Hear What Our Clients Have to Say
         </p>
       </div>

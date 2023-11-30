@@ -43,24 +43,24 @@ const Services = () => {
     <div className="max-w-6xl mx-auto  mt-10">
       <div className="flex  flex-col gap-10">
         {/* title */}
-        <div className="flex flex-col gap-4">
-          <h3 className="text-secondary font-medium text-xl text-center">
-            Servces
+        <div className="flex flex-col gap-2">
+          <h3 className="text-secondary dark:text-yellow-500 font-semibold text-2xl text-center">
+            Services
           </h3>
-          <p className="text-neutral-700 dark:text-white text-xl text-center font-medium  leading-20">
-            <span className="text-3xl   font-bold">"</span>
-            We are committed to assisting you in achieving your technology
-            related goals.
-            <span className="text-3xl  font-bold">"</span>
+          <p className="text-neutral-700 dark:text-white text-md text-center font-medium  leading-20">
+            WHAT CAN WE DO?
           </p>
         </div>
 
         {/* services list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10">
           {AllServices.map((Services, e) => (
-            <div className="  flex flex-col cursor-pointer hover:-translate-y-1 duration-100  bg-blue-50 h-full   shadow-lg rounded-md px-3 py-4 gap-10" key={e}>
+            <div
+              className="  flex flex-col cursor-pointer hover:-translate-y-1 duration-100  bg-blue-50 h-full   shadow-lg rounded-md px-3 py-4 gap-10"
+              key={e}
+            >
               {Services.icon}
-              <div >
+              <div>
                 <h3 className="text-xl font-semibold">{Services.name}</h3>
                 <p className="font-light ">{Services.contant}</p>
               </div>

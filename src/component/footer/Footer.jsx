@@ -5,127 +5,121 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
 
+import Logo from "../../assets/images/jubbaLogo.png"
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/Context';
+
+const scrollToTop = () => {
+  
+  
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Smooth scroll behavior
+  });
+};
 const Footer = () => {
+
+  
+  const {currentPage ,setCurrentPage} = useAuth()
   return (
-    <div className="bg-white dark:bg-blue-950  self-stretch flex w-full flex-col items-center mt-7 px-5 py-12 max-md:max-w-full">
-      <div className="flex w-full max-w-[1184px] flex-col mt-24 mb-16 max-md:max-w-full max-md:my-10">
-        <div className="self-stretch flex w-full justify-between gap-5 max-md:max-w-full max-md:flex-col">
-          <div className="text-blue-600 text-xl font-medium leading-6">
-            Logo
-          </div>
-          <div className="justify-between dark:text-white mt-3.5 max-md:max-w-full">
-            <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+    <div className="w-full dark:bg-blue-950 bg-blue-50 p-2 pb-4">
+      <div className="flex  flex-col max-w-6xl mx-auto ">
+        {/* one */}
+        <div className="grid  md:grid-cols-2">
+          {/* img */}
+          <Link to="/" className="">
+            <img
+              src={Logo}
+              alt=""
+              className="object-contain w-28 "
+              onClick={scrollToTop}
+            />
+          </Link>
+          {/* items */}
+          <div className=" flex flex-col sm:flex-row sm:justify-between dark:text-white flex-wrap gap-5 items-start  ">
+            <section className="flex flex-col gap-4 ">
+              <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
+                Information
+              </h1>
+              <ul className="flex flex-col space-y-4">
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  FAQ
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Blog
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Support
+                </li>
+              </ul>
+            </section>
 
+            <section className="flex flex-col gap-4 ">
+              <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
+                Company
+              </h1>
+              <ul className="flex flex-col space-y-4">
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  <Link to="/about" onClick={() => setCurrentPage("about")}>
+                    About
+                  </Link>
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  <Link to="/contact" onClick={() => setCurrentPage("contact")}>
+                    Contact
+                  </Link>
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Careers
+                </li>
+              </ul>
+            </section>
 
-              <div className="flex flex-col items-stretch w-[27%] max-md:w-full max-md:ml-0">
-                <div className="flex grow flex-col items-stretch max-md:mt-10">
-                  <div className="text-slate-900 dark:text-white text-base leading-7 whitespace-nowrap">
-                    Product
-                  </div>
-                  <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-6">
-                    database
-                  </span>
-                  <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-5">
-                    Payroll
-                  </span>
-                  <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-4">
-                    Absences
-                  </span>
-                  <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-5">
-                    Time tracking
-                  </span>
-                  <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-4">
-                    Shift planner
-                  </span>
-                  <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-4">
-                    Recruiting
-                  </span>
-                </div>
-              </div>
-
-
-              <div className="flex flex-col items-stretch w-[73%] ml-5 max-md:w-full max-md:ml-0">
-                <div className="max-md:max-w-full max-md:mt-10">
-                  <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-
-                    <div className="flex flex-col items-stretch w-[32%] max-md:w-full max-md:ml-0">
-                      <div className="flex flex-col items-stretch max-md:mt-10">
-                        <div className="text-slate-900 dark:text-white text-base leading-7 whitespace-nowrap">
-                          Information
-                        </div>
-                        <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 whitespace-nowrap mt-6">
-                          FAQ
-                        </span>
-                        <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-4">
-                          Blog
-                        </span>
-                        <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 whitespace-nowrap mt-4">
-                          Support
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col items-stretch w-[28%] ml-5 max-md:w-full max-md:ml-0">
-                      <div className="flex flex-col items-stretch max-md:mt-10">
-                        <div className="text-slate-900 dark:text-white text-base leading-7 whitespace-nowrap">
-                          Company
-                        </div>
-                        <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 whitespace-nowrap mt-5">
-                          About us
-                        </span>
-                        <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-5">
-                          Careers
-                        </span>
-                        <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-5">
-                          Contact us
-                        </span>
-                        <span className="text-slate-900 dark:text-white text-base leading-4 opacity-50 whitespace-nowrap mt-5">
-                          Lift Media
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col items-stretch w-[39%] ml-5 max-md:w-full max-md:ml-0">
-                      {/* <div className="flex grow flex-col items-stretch max-md:mt-10">
-                          <div className="text-slate-900 dark:text-white text-base leading-7">
-                            Legal
-                          </div>
-                          <div className="text-slate-900 dark:text-white text-base leading-4 opacity-50 mt-5">
-                            Privacy & Policy
-                          </div>
-                          <div className="text-slate-900 dark:text-white text-base leading-4 opacity-50 whitespace-nowrap mt-4">
-                            Refunds Policy
-                          </div>
-                          <div className="text-slate-900 dark:text-white text-sm leading-4 opacity-50 mt-5">
-                            Terms
-                          </div>
-                          <div className="text-slate-900 dark:text-white text-sm leading-4 opacity-50 mt-6">
-                            Privacy
-                          </div>
-                        </div> */}
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
+            <section className="flex flex-col gap-4 ">
+              <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
+                Product
+              </h1>
+              <ul className="flex flex-col space-y-4">
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  database
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Payroll
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Absences
+                </li>
+              </ul>
+            </section>
           </div>
         </div>
 
-        <div className="text-indigo-600 dark:text-white/50 text-lg self-stretch whitespace-nowrap max-md:max-w-full">
-          © 2023 Jubba ICT solutions, Inc.
+        {/* two */}
+        <div className=" flex flex-col gap-2">
+          <div className="flex  items-stretch gap-6 ml-2.5 mt-3.5 self-start max-md:justify-center">
+            <a target="_blank" href="http://www.facebook.com">
+              <FaFacebook className=" dark:text-white cursor-pointer w-6 h-6" />
+            </a>
+            <a target="_blank" href="http://www.instagram.com">
+              <FiInstagram className=" dark:text-white cursor-pointer w-6 h-6" />
+            </a>
+            <a target="_blank" href="http://www.linkedin.com">
+              <FaLinkedin className=" dark:text-white cursor-pointer w-6 h-6" />
+            </a>
+            <a target="_blank" href="http://www.github.com">
+              <BsGithub className=" dark:text-white cursor-pointer w-6 h-6" />
+            </a>
+            <a target="_blank" href="http://www.x.com">
+              <FaXTwitter className=" dark:text-white cursor-pointer w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-indigo-600 dark:text-white/50 text-lg font-medium self-stretch whitespace-nowrap max-md:max-w-full">
+            © 2023 Jubba ICT solutions, Inc.
+          </p>
         </div>
-        <div className="flex w-[197px] max-w-full items-stretch gap-6 ml-2.5 mt-3.5 self-start max-md:justify-center">
-          <FaFacebook className=" dark:text-white w-6 h-6" />
-          <FiInstagram className=" dark:text-white w-6 h-6" />
-          <FaLinkedin className=" dark:text-white w-6 h-6" />
-          <BsGithub className=" dark:text-white w-6 h-6" />
-          <FaXTwitter className=" dark:text-white w-6 h-6" />
-        </div>
-
       </div>
     </div>
   );
 }
 
-export default Footer
+export default Footer;
