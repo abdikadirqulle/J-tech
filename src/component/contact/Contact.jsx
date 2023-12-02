@@ -60,7 +60,7 @@ const Contact = () => {
                         <br />
                       </span>
                       <span className="text-blue-600 dark:text-blue-400">
-                        03 5432 1234
+                        +252 617797802
                       </span>
                     </div>
                   </div>
@@ -72,7 +72,7 @@ const Contact = () => {
                         <br />
                       </span>
                       <span className="text-blue-600 dark:text-blue-400">
-                        03 5432 1234
+                        +252617797802
                       </span>
                     </div>
                   </div>
@@ -84,7 +84,7 @@ const Contact = () => {
                         <br />
                       </span>
                       <span className="text-blue-600 dark:text-blue-400">
-                        info@marcc.com.au
+                        info@jubbaTech.com.au
                       </span>
                     </div>
                   </div>
