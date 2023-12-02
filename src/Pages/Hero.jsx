@@ -1,28 +1,30 @@
-import React, { useEffect, useRef } from 'react'
-import Home, { CompaniesList, LocalBrand } from '../component/home/Home'
-import About from '../component/about/About'
-import Services from '../component/services/Services'
-import Testimonial from '../component/testimonial/Testimonial'
-import ICTStrategy from '../component/ict-Strategy/ICT-Strategy'
-import FAQ from '../component/faq/FAQ'
-import LastCTA from '../component/last-CTA/Last-CTA'
-import Footer from '../component/footer/Footer'
-import Contact from '../component/contact/Contact'
+import React, { useEffect, useRef } from "react";
+import Home, { CompaniesList, LocalBrand } from "../component/home/Home";
+import About from "../component/about/About";
+import Services from "../component/services/Services";
+import Testimonial from "../component/testimonial/Testimonial";
+import ICTStrategy from "../component/ict-Strategy/ICT-Strategy";
+import FAQ from "../component/faq/FAQ";
+import LastCTA from "../component/last-CTA/Last-CTA";
+import Footer from "../component/footer/Footer";
+import Contact from "../component/contact/Contact";
+import { useAuth } from "../context/Context";
 
 const Hero = () => {
+  const { currentPage, setCurrentPage } = useAuth();
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth", // Smooth scroll behavior
     });
-  },[]);
-
+    setCurrentPage("home");
+  }, []);
 
   return (
     <div className="">
       <Home />
       <div className="max-w-6xl mx-auto flex flex-col">
-        <div>
+        <div className="mx-2">
           <CompaniesList />
           <About />
         </div>
@@ -39,5 +41,5 @@ const Hero = () => {
       <Footer />
     </div>
   );
-}
-export default Hero
+};
+export default Hero;

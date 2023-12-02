@@ -1,14 +1,13 @@
-// import { motion } from "framer-motion"
-import {motion} from "framer-motion"
-import img4 from "../../assets/AboutImg/img4.jpg"
-import img2 from "../../assets/AboutImg/img2.jpg"
+import img4 from "../../assets/AboutImg/img4.jpg";
+import img2 from "../../assets/AboutImg/img2.jpg";
+
 const About = () => {
   return (
     <div className=" flex flex-col  overflow-hidden">
       {/* one */}
       <div className="">
         <div className="flex flex-col gap-2 mb-10 justify-center items-center">
-          <h3 class="text-secondary dark:text-yellow-500 text-xl font-semibold text-center ">
+          <h3 className="text-secondary dark:text-yellow-500 text-xl font-semibold text-center ">
             ABOUT US
           </h3>
           <p className="text-neutral-700 text-lg text-center md:text-xl md:w-3/4 px-10 md:px-0  md:font-medium dark:text-white font-normal  ml-2 md:ml-9">
@@ -37,7 +36,7 @@ const About = () => {
               ever-evolving digital landscape.
             </span>
           </div>
-          <img
+          <motionimg
             src={img4}
             className="rounded-md w-full md:w-1/2  object-contain "
           />

@@ -1,26 +1,22 @@
-import React from 'react'
+import React from "react";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
 
-import Logo from "../../assets/images/jubbaLogo.png"
-import { Link } from 'react-router-dom';
-import { useAuth } from '../../context/Context';
+import Logo from "../../assets/images/jubbaLogo.png";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../context/Context";
 
 const scrollToTop = () => {
-  
-  
   window.scrollTo({
     top: 0,
-    behavior: "smooth", // Smooth scroll behavior
+    behavior: "smooth",
   });
 };
 const Footer = () => {
-
-  
-  const {currentPage ,setCurrentPage} = useAuth()
+  const { currentPage, setCurrentPage } = useAuth();
   return (
     <div className="w-full dark:bg-blue-950 bg-blue-50 p-2 pb-4">
       <div className="flex  flex-col max-w-6xl mx-auto ">
@@ -37,23 +33,6 @@ const Footer = () => {
           </Link>
           {/* items */}
           <div className=" flex flex-col sm:flex-row sm:justify-between dark:text-white flex-wrap gap-5 items-start  ">
-            <section className="flex flex-col gap-4 ">
-              <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
-                Information
-              </h1>
-              <ul className="flex flex-col space-y-4">
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  FAQ
-                </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Blog
-                </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Support
-                </li>
-              </ul>
-            </section>
-
             <section className="flex flex-col gap-4 ">
               <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
                 Company
@@ -77,17 +56,34 @@ const Footer = () => {
 
             <section className="flex flex-col gap-4 ">
               <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
-                Product
+                Information
               </h1>
               <ul className="flex flex-col space-y-4">
                 <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  database
+                  FAQ
                 </li>
                 <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Payroll
+                  Blog
                 </li>
                 <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Absences
+                  Support
+                </li>
+              </ul>
+            </section>
+
+            <section className="flex flex-col gap-4 ">
+              <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
+                Legal
+              </h1>
+              <ul className="flex flex-col space-y-4">
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Privacy & Policy
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Terms
+                </li>
+                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                  Privacy
                 </li>
               </ul>
             </section>
@@ -120,6 +116,6 @@ const Footer = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

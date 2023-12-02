@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 // our hook
 
 export const useAuth = () => {
-	return useContext(AuthContext);
+  return useContext(AuthContext);
 };
 
 export const AuthProvider = ({ children }) => {
@@ -21,14 +21,10 @@ export const AuthProvider = ({ children }) => {
     currentPage,
     setCurrentPage,
     theme,
-    setTheme
+    setTheme,
   };
 
   localStorage.setItem("currentPage", JSON.stringify(currentPage));
-
-  // 	useEffect(() => {
-  //     currentPage === "" ? "home" : currentPage;
-  //   }, [currentPage]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

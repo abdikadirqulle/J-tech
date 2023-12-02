@@ -1,42 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 import { FiSun } from "react-icons/fi";
 import { FiMoon } from "react-icons/fi";
-import Logo from "../../assets/images/jubbaLogo.png"
-import { useAuth } from '../../context/Context';
-
+import Logo from "../../assets/images/jubbaLogo.png";
+import { useAuth } from "../../context/Context";
 
 const Header = () => {
-  const [showMenu ,setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
 
-  const { setCurrentPage , currentPage ,theme ,setTheme} = useAuth();
+  const { setCurrentPage, currentPage, theme, setTheme } = useAuth();
 
-  
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('.headers');
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector(".headers");
     if (window.scrollY >= 10) {
-      header.style.backgroundColor = '';
-      header.classList.add = '';
+      header.style.backgroundColor = "";
+      header.classList.add = "";
     } else {
-      header.style.backgroundColor = '';
-      
+      header.style.backgroundColor = "";
     }
   });
-  
 
-  const handleHomeClick = () => {
-  };
-  
-  console.log(currentPage)
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Smooth scroll behavior
+      behavior: "smooth",
     });
 
-    setCurrentPage('home');
+    setCurrentPage("home");
   };
 
   return (
@@ -98,7 +90,7 @@ const Header = () => {
           </Link>
         </nav>
         {/* CTA and Dark mode */}
-        <div className="flex items-center justify-between gap-5">
+        <div className="flex items-center justify-between gap-2 md:gap-5">
           {theme === "dark" ? (
             <FiMoon
               className="w-8 h-8 md:w-6 md:h-6 dark:text-blue-100 cursor-pointer hover:rotate-45 duration-100"
@@ -116,7 +108,7 @@ const Header = () => {
           )}
           <Link to="/contact" onClick={() => setCurrentPage("contact")}>
             <button className="text-white hidden hover:scale-95 duration-500 md:flex text-center text-[12px] font-medium   bg-secondary   px-5 py-2 rounded-lg">
-              Get Started
+              Contact Us
             </button>
           </Link>
           <div className="md:hidden flex gap-3 items-center ">
@@ -182,9 +174,18 @@ const Header = () => {
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <Link to="/contact" onClick={() => setCurrentPage("contact")}>
-                    <button className="text-purple-50 cursor-pointer text-center text-base font-medium leading-4 items-center bg-indigo-600 self-stretch mt-5 px-5 py-5 hover:scale-95 dur rounded-md">
-                      Get Started
+                  <Link
+                    to="/contact"
+                    onClick={() => {
+                      setCurrentPage("contact"), setShowMenu(false);
+                    }}
+                    className="p-5"
+                  >
+                    <button
+                      className="text-purple-50 cursor-pointer text-center text-base
+                    font-medium leading-4 items-center bg-indigo-600 self-stretch mt-5 px-5 py-5 hover:scale-95 duration-100 rounded-md"
+                    >
+                      Contact Us
                     </button>
                   </Link>
                 </div>
@@ -199,7 +200,6 @@ const Header = () => {
       </div>
     </header>
   );
-}
+};
 
-export default Header
-
+export default Header;

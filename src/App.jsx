@@ -1,22 +1,22 @@
 import { Outlet } from "react-router-dom";
 import Header from "./component/header/Header";
-import { useEffect,  useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "./context/Context";
 
 const App = () => {
   const [hasShadow, setHasShadow] = useState(false);
 
- const {theme , setTheme} = useAuth()
+  const { theme, setTheme } = useAuth();
 
-  localStorage.setItem('theme' , JSON.stringify(theme))
-  
+  localStorage.setItem("theme", JSON.stringify(theme));
+
   useEffect(() => {
-    if(theme === "dark") {
-      document.documentElement.classList.add("dark")
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  const handleScroll = () => {
+    const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY > 2) {
         setHasShadow(true);
@@ -25,21 +25,22 @@ const App = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-
-  }, [theme])
-
-
+  }, [theme]);
 
   return (
-    <div className="scroll-smooth bg- dark:bg-blue-950 ">
-      <div className={`bg-white dark:bg-blue-950  header  py-2 z-50 fixed w-full ${hasShadow ? " dark:shadow-blue-900  shadow-md": ""}`}>
-      <Header />
-    </div>
+    <div className="selection:bg-blue-400  dark:selection:bg-blue-300 scroll-smooth bg- dark:bg-blue-950 ">
+      <div
+        className={`bg-white dark:bg-blue-950  header  py-2 z-50 fixed w-full ${
+          hasShadow ? " dark:shadow-blue-900  shadow-md" : ""
+        }`}
+      >
+        <Header />
+      </div>
       <Outlet />
     </div>
   );

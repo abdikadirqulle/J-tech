@@ -1,17 +1,17 @@
-import React from 'react'
-import "./Home.css"
-import google from "../../assets/images/google.svg"
-import aws from "../../assets/images/aws.svg"
-import bmw from "../../assets/images/bmw.svg"
-import figma from "../../assets/images/figma.svg"
-import meta from "../../assets/images/meta.svg"
-import microsoft from "../../assets/images/microsoft.svg"
-import netflix from "../../assets/images/netflix.svg"
+import React from "react";
+import "./Home.css";
+import google from "../../assets/images/google.svg";
+import aws from "../../assets/images/aws.svg";
+import bmw from "../../assets/images/bmw.svg";
+import figma from "../../assets/images/figma.svg";
+import meta from "../../assets/images/meta.svg";
+import microsoft from "../../assets/images/microsoft.svg";
+import netflix from "../../assets/images/netflix.svg";
 
-import another from "../../assets/images/visual.jpg"
-import { Link } from 'react-router-dom'
-import { LocalBrands } from '../../../public/LocalBrands'
-import { useAuth } from '../../context/Context'
+import another from "../../assets/images/visual.jpg";
+import { Link } from "react-router-dom";
+import { LocalBrands } from "../../LocalBrands";
+import { useAuth } from "../../context/Context";
 export const BigCompanies = [
   {
     name: "netflix",
@@ -42,13 +42,12 @@ export const BigCompanies = [
     image: microsoft,
   },
 ];
-  const Home = () => {
+const Home = () => {
+  const { currentPage, setCurrentPage } = useAuth();
 
-    const {currentPage ,setCurrentPage} = useAuth()
-
-    const handelStart = () => {
-      setCurrentPage("contact")
-    }
+  const handelStart = () => {
+    setCurrentPage("contact");
+  };
 
   return (
     <div className="items-center  dark:bg-blue-950 flex w-full flex-col mt- md:pt-14 pb-9 px-5 ">
@@ -68,8 +67,8 @@ export const BigCompanies = [
                 Solutions
               </div>
               <Link to="/contact" onClick={handelStart}>
-                <button className="text-white shadow text-xl font-semibold leading-4 items-center bg-secondary w-[172px] max-w-full mt-10 px-6 py-5 rounded-[8px] max-md:mt-10">
-                  Get Started
+                <button className="text-white shadow text-xl font-medium hover:bg-blue-600 duration-100 leading-4 items-center bg-secondary w-[172px] max-w-full mt-10 px-6 py-5 rounded-[8px] max-md:mt-10">
+                  Contact Us
                 </button>
               </Link>
             </div>
@@ -84,10 +83,9 @@ export const BigCompanies = [
       </div>
     </div>
   );
-}
+};
 
-export default Home
-
+export default Home;
 
 export const CompaniesList = () => {
   return (
@@ -104,20 +102,21 @@ export const CompaniesList = () => {
       </div>
     </div>
   );
-}
+};
 export const LocalBrand = () => {
   return (
     <div className="justify-center items-center mx-auto  overflow-hidden self-center flex w-full max-w-[1152px] flex-col gap-10 px-5 py-10 max-md:max-w-full">
       <p className="text-center dark:text-white text-black/70 text-[19px] mt-10 font-normal">
-      Start now and join thousands of successful local and global brands with Jubba ICT solutions.
+        Start now and join thousands of successful local and global brands with
+        Jubba ICT solutions.
       </p>
       <div className="animate-left-to-right  flex  w-full translate-x-2  items-center justify-center gap-10 max-md:max-w-full ">
         {LocalBrands.map((brand) => (
-          <div key={brand.id} className=' flex'>
-            <img src={brand.image} alt=""  className='-4'/>
+          <div key={brand.id} className=" flex">
+            <img src={brand.image} alt="" className="-4" />
           </div>
         ))}
       </div>
     </div>
   );
-}
+};

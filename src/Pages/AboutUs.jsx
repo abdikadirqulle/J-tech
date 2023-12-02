@@ -1,34 +1,43 @@
-import React ,{useEffect} from 'react'
-import About from "../component/about/About"
-import LastCTA from "../component/last-CTA/Last-CTA"
-import {CompaniesList} from "../component/home/Home"
-import FAQ from '../component/faq/FAQ'
-import Footer from '../component/footer/Footer'
+import React, { useEffect } from "react";
+import About from "../component/about/About";
+import LastCTA from "../component/last-CTA/Last-CTA";
+import { CompaniesList } from "../component/home/Home";
+import FAQ from "../component/faq/FAQ";
+import Footer from "../component/footer/Footer";
 
-import AboutImg from "../assets/AboutImg/img5.jpg"
+import AboutImg from "../assets/AboutImg/img5.jpg";
+import { useAuth } from "../context/Context";
+
 const AboutUs = () => {
+  const { setCurrentPage } = useAuth();
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth", // Smooth scroll behavior
     });
-  });
+    setCurrentPage("about");
+  }, []);
+
+  window.title = "About Us";
   return (
     <div className=" bg-[#] w-full h-full flex flex-col gap-10 dark:bg-blue-950">
-    <div className="pt-20 flex flex-col gap-10   max-w-6xl  mx-auto  pb-4 ">
-      <div className='flex justify-center items-center'>
-      <img
-       src={AboutImg} 
-       alt="" className='w-1/2 rotate-3 hover:rotate-0 duration-100 rounded-md mt-2 object-contain '/>
-       </div>
-      <About />
-      <CompaniesList />
-      <FAQ />
-      <LastCTA />
-    </div>
+      <div className="pt-20 flex flex-col gap-10   max-w-6xl  mx-auto  pb-4 ">
+        <div className="flex justify-center items-center">
+          <img
+            src={AboutImg}
+            alt=""
+            className="w-1/2 rotate-3 hover:rotate-0 duration-100 rounded-md mt-2 object-contain "
+          />
+        </div>
+        <About />
+        <CompaniesList />
+        <FAQ />
+        <LastCTA />
+      </div>
       <Footer />
-  </div>
-  )
-}
+    </div>
+  );
+};
 
-export default AboutUs
+export default AboutUs;
