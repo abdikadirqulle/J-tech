@@ -37,16 +37,19 @@ const Contact = () => {
     const { name, email, subject, message } = data;
     try {
       console.log("data", data);
-      toast.success(`Thank ${name} you for reaching out! `, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.success(
+        `Thank  you for reaching out! I'll be in touch shortly to discuss your inquiry.`,
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
       setFormData({
         name: "",
         email: "",
@@ -154,13 +157,10 @@ const Contact = () => {
                   {...register("massege", { required: true })}
                   onChange={handleTextChange}
                 />
-
                 <button className="text-white dark:text-black dark:bg-blue-300 rounded-md text-base text-center font-bold  uppercase bg-secondary mt-5 px-5 py-4 max-md:max-w-full">
                   Let’s talk
                 </button>
               </form>
-
-              {/* contact info */}
               <div className="items-stretch flex w-full justify-between gap-5 mt-16 max-md:max-w-full max-md:flex-wrap max-md:justify-center max-md:mt-10">
                 <div className="items-center flex justify-between gap-4">
                   <FiPhoneCall className="w-7 h-7 dark:text-white" />
@@ -170,7 +170,7 @@ const Contact = () => {
                       <br />
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
-                      03 5432 1234
+                      01 2345 6789
                     </span>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ const Contact = () => {
                       <br />
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
-                      03 5432 1234
+                      012345
                     </span>
                   </div>
                 </div>
@@ -194,19 +194,18 @@ const Contact = () => {
                       <br />
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
-                      info@marcc.com.au
+                      info@jtech.so
                     </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* contact img */}
           <div className="relative flex flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
             <div className="absolute inset-0 top-0 bg-blue-900/50  rounded-md p-4"></div>
             <img
               src={company}
-              className="object-contain w-full rounded-md"
+              className="object-contain w-full  rounded-md"
               alt="company"
             />
           </div>
