@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { BsFileEarmarkCode } from "react-icons/bs";
 import { CiLock } from "react-icons/ci";
 import { BsCloudUpload } from "react-icons/bs";
@@ -9,34 +9,40 @@ import { RiCodeSSlashFill } from "react-icons/ri";
 const Services = () => {
   const AllServices = [
     {
-      icon: <BsFileEarmarkCode className="w-9 h-9 text-secondary" />  ,
+      icon: <BsFileEarmarkCode className="w-9 h-9 text-secondary" />,
       name: "Software Development",
-      contant: "Our expert developers can create tailor-made software solutions that align with your unique requirements.",
+      contant:
+        "Our expert developers can create tailor-made software solutions that align with your unique requirements.",
     },
     {
-      icon: <CiLock className="w-9 h-9 text-secondary" />      ,
+      icon: <CiLock className="w-9 h-9 text-secondary" />,
       name: "Cybersecurity",
-      contant: "Safeguard your data and systems with our state-of-the-art services.",
+      contant:
+        "Safeguard your data and systems with our state-of-the-art services.",
     },
     {
       icon: <BsCloudUpload className="w-9 h-9 text-secondary" />,
       name: "Cloud Services",
-      contant: "Optimize your operations by migrating to the cloud, increasing scalability and efficiency",
+      contant:
+        "Optimize your operations by migrating to the cloud, increasing scalability and efficiency",
     },
     {
       icon: <BsPersonVideo3 className="w-9 h-9 text-secondary" />,
       name: "Consulting Services",
-      contant: "Count on us for expert advice and guidance to make informed ICT decisions.",
+      contant:
+        "Count on us for expert advice and guidance to make informed ICT decisions.",
     },
     {
       icon: <TbDeviceMobileCode className="w-9 h-9 text-secondary" />,
       name: "Mobile App Development",
-      contant: "Build performant, scalable, and securemobile applicationsforiOSandAndroiddevices.",
+      contant:
+        "Build performant, scalable, and securemobile applications for iOS and Android devices.",
     },
     {
       icon: <RiCodeSSlashFill className="w-9 h-9 text-secondary" />,
       name: "Web Design and Development",
-      contant: "Creating websites, web applications, and user interfaces tailored to specific needs, focusing on user experience and visual design.",
+      contant:
+        "Creating websites, web applications, and user interfaces tailored to specific needs, focusing on user experience and visual design.",
     },
   ];
   return (
@@ -60,9 +66,11 @@ const Services = () => {
               key={e}
             >
               {Services.icon}
-              <div>
+              <div className="flex flex-col gap-4">
                 <h3 className="text-xl font-semibold">{Services.name}</h3>
-                <p className="font-light ">{Services.contant}</p>
+                <p className="font-normal overflow-hidden whitespace-pre-wrap">
+                  {Services.contant}
+                </p>
               </div>
             </div>
           ))}
@@ -70,7 +78,6 @@ const Services = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Services
-
+export default Services;

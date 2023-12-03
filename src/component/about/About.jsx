@@ -1,12 +1,20 @@
 import img4 from "../../assets/AboutImg/img4.jpg";
 import img2 from "../../assets/AboutImg/img2.jpg";
 
+import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className=" flex flex-col  overflow-hidden">
       {/* one */}
       <div className="">
-        <div className="flex flex-col gap-2 mb-10 justify-center items-center">
+        <motion.div
+          initial={{ x: 100 }}
+          animate={{ x: 0 }}
+          transition={{
+            duration: "1",
+          }}
+          className="flex flex-col gap-2 mb-10 justify-center items-center"
+        >
           <h3 className="text-secondary dark:text-yellow-500 text-xl font-semibold text-center ">
             ABOUT US
           </h3>
@@ -16,7 +24,7 @@ const About = () => {
             small and medium-sized enterprises (SMEs), and large corporations.
             <span className="text-3xl  font-bold">"</span>
           </p>
-        </div>
+        </motion.div>
       </div>
       {/* two */}
       <div className="bg-[#F5F5FE] dark:bg-blue-900 rounded-md py-2 flex flex-col flex-grow gap-4 px-2">
@@ -25,7 +33,16 @@ const About = () => {
             <h1 className="text-indigo-600 dark:text-yellow-500 text-xl font-semibold tracking-[2px] whitespace-nowrap max-md:max-w-full">
               WHO WE ARE{" "}
             </h1>
-            <span className="text-neutral-700 dark:text-white text-lg font-normal ">
+
+            <motion.span
+              initial={{ x: -100 }}
+              animate={{ x: 0 }}
+              transition={{
+                duration: "1",
+                delay: "1",
+              }}
+              className="text-neutral-700 dark:text-white text-lg font-normal "
+            >
               Jubba ICT Solutions is a dynamic and forward-thinking Information
               and Communication Technology (ICT) company that stands at the
               forefront of technological innovation. Established with a passion
@@ -34,9 +51,10 @@ const About = () => {
               solutions. Our journey is defined by a commitment to excellence,
               customer satisfaction, and a profound understanding of the
               ever-evolving digital landscape.
-            </span>
+            </motion.span>
           </div>
-          <motionimg
+          <motion.img
+            // whileInView
             src={img4}
             className="rounded-md w-full md:w-1/2  object-contain "
           />
