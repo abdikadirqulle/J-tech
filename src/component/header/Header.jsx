@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
@@ -6,9 +6,9 @@ import { FiSun } from "react-icons/fi";
 import { FiMoon } from "react-icons/fi";
 import Logo from "../../assets/images/jubbaLogo.png";
 import { useAuth } from "../../context/Context";
-
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
 
   const { setCurrentPage, currentPage, theme, setTheme } = useAuth();
 
@@ -29,7 +29,35 @@ const Header = () => {
     });
 
     setCurrentPage("home");
+    setShowMenu(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setShowMenu(false);
+      }
+    };
+
+    if (showMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscape);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [showMenu]);
 
   return (
     <header className="headers max-w-6xl mx-auto">
@@ -121,8 +149,8 @@ const Header = () => {
 
         {/* mobile menu  */}
         {showMenu && (
-          <div className="absolute md:hidden right-0 -top-4">
-            <div className="bg-white relative  w-[20rem] h-screen">
+          <div ref={menuRef} className="absolute md:hidden right-0 -top-4">
+            <div className="bg-white dark:bg-blue-950 relative  w-[20rem] h-screen">
               <div className="h-screen w-full flex flex-col pt-10 justify-evenly items- px-2 py-4 ">
                 <div className="flex flex-col space-y-[74px]  items-center">
                   <Link
@@ -132,7 +160,7 @@ const Header = () => {
                         ? "text-indigo-600  font-semibold "
                         : currentPage === null
                         ? "text-indigo-600  font-semibold"
-                        : "text-slate-900"
+                        : "text-slate-900  dark:text-white"
                     } text-base font-medium leading-4 cursor-pointer whitespace-nowrap`}
                     onClick={scrollToTop}
                   >
@@ -143,30 +171,36 @@ const Header = () => {
                     className={`${
                       currentPage === "about"
                         ? "text-indigo-600 font-semibold  "
-                        : "text-slate-900"
+                        : "text-slate-900  dark:text-white"
                     } text-base  font-medium leading-4 cursor-pointer whitespace-nowrap`}
-                    onClick={() => setCurrentPage("about")}
+                    onClick={() => {
+                      setCurrentPage("about"), setShowMenu(false);
+                    }}
                   >
                     About us
                   </Link>
                   <Link
                     to="/services"
-                    onClick={() => setCurrentPage("services")}
+                    onClick={() => {
+                      setCurrentPage("services"), setShowMenu(false);
+                    }}
                     className={` ${
                       currentPage === "services"
                         ? "text-indigo-600 font-semibold "
-                        : "text-slate-900"
+                        : "text-slate-900  dark:text-white"
                     } text-base font-medium leading-4 cursor-pointer whitespace-nowrap`}
                   >
                     Services
                   </Link>
                   <Link
                     to="/contact"
-                    onClick={() => setCurrentPage("contact")}
+                    onClick={() => {
+                      setCurrentPage("contact"), setShowMenu(false);
+                    }}
                     className={`${
                       currentPage === "contact"
                         ? "text-indigo-600 font-semibold "
-                        : "text-slate-900"
+                        : "text-slate-900  dark:text-white"
                     } text-base  font-medium leading-4 cursor-pointer whitespace-nowrap`}
                   >
                     Contact Us
@@ -192,7 +226,7 @@ const Header = () => {
               </div>
               <MdClose
                 onClick={() => setShowMenu(false)}
-                className="w-9 h-9 absolute right-4 top-5 cursor-pointer"
+                className="w-9 h-9 absolute right-4  dark:text-white top-5 cursor-pointer"
               />
             </div>
           </div>

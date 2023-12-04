@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useAuth } from "./context/Context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
+
 const App = () => {
   const [hasShadow, setHasShadow] = useState(false);
 
@@ -49,13 +51,13 @@ const App = () => {
       />
       {/* Same as */}
       <ToastContainer />
-      <div
+      <motion.div
         className={`bg-white dark:bg-blue-950  header  py-2 z-50 fixed w-full ${
           hasShadow ? " dark:shadow-blue-900  shadow-md" : ""
         }`}
       >
         <Header />
-      </div>
+      </motion.div>
       <Outlet />
     </div>
   );

@@ -12,6 +12,8 @@ import another from "../../assets/images/visual.jpg";
 import { Link } from "react-router-dom";
 import { LocalBrands } from "../../LocalBrands";
 import { useAuth } from "../../context/Context";
+import { motion } from "framer-motion";
+
 export const BigCompanies = [
   {
     name: "netflix",
@@ -50,7 +52,12 @@ const Home = () => {
   };
 
   return (
-    <div className="items-center  dark:bg-blue-950 flex w-full flex-col mt- md:pt-14 pb-9 px-5 ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="items-center  dark:bg-blue-950 flex w-full flex-col mt- md:pt-14 pb-9 px-5 "
+    >
       {/* home */}
       <div className="mx-auto max-w-6xl">
         <div className="gap-5 flex justify-between  items-center max-md:flex-col mt-10 ">
@@ -63,8 +70,8 @@ const Home = () => {
                 <br />
               </div>
               <div className="text-black dark:text-white/90 text-[20px] font-light self-stretch mt-1 text-center md:text-left max-md:max-w-full">
-                Revolutionizing Industries with Advanced Technology and Tailored
-                Solutions
+                🚀 Revolutionizing Industries with Advanced Technology and
+                Tailored Solutions
               </div>
               <Link to="/contact" onClick={handelStart}>
                 <button className="text-white shadow text-xl font-medium hover:bg-blue-600 duration-100 leading-4 items-center bg-secondary w-[172px] max-w-full mt-10 px-6 py-5 rounded-[8px] max-md:mt-10">
@@ -81,7 +88,7 @@ const Home = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -90,9 +97,14 @@ export default Home;
 export const CompaniesList = () => {
   return (
     <div className="justify-center items-center mx-auto  overflow-hidden self-center flex w-full max-w-[1152px] flex-col gap-10 px-5 py-10 max-md:max-w-full">
-      <p className="text-center dark:text-white text-black/70 text-[19px] mt-10 font-medium">
+      <motion.p
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center dark:text-white text-black/70 text-[19px] mt-10 font-medium"
+      >
         Trusted by the biggest companies
-      </p>
+      </motion.p>
       <div className=" flex flex-wrap w-full  items-center justify-center gap-10 max-md:max-w-full ">
         {BigCompanies.map((company, e) => (
           <div key={e}>

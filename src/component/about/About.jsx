@@ -7,14 +7,7 @@ const About = () => {
     <div className=" flex flex-col  overflow-hidden">
       {/* one */}
       <div className="">
-        <motion.div
-          initial={{ x: 100 }}
-          animate={{ x: 0 }}
-          transition={{
-            duration: "1",
-          }}
-          className="flex flex-col gap-2 mb-10 justify-center items-center"
-        >
+        <motion.div className="flex flex-col gap-2 mb-10 justify-center items-center">
           <h3 className="text-secondary dark:text-yellow-500 text-xl font-semibold text-center ">
             ABOUT US
           </h3>
@@ -35,12 +28,9 @@ const About = () => {
             </h1>
 
             <motion.span
-              initial={{ x: -100 }}
-              animate={{ x: 0 }}
-              transition={{
-                duration: "1",
-                delay: "1",
-              }}
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
               className="text-neutral-700 dark:text-white text-lg font-normal "
             >
               Jubba ICT Solutions is a dynamic and forward-thinking Information
@@ -54,14 +44,19 @@ const About = () => {
             </motion.span>
           </div>
           <motion.img
-            // whileInView
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: "0.5" }}
             src={img4}
             className="rounded-md w-full md:w-1/2  object-contain "
           />
         </div>
         {/* three */}
         <div className="gap-5 flex max-md:flex-col-reverse mt-10   max-md:mt-10">
-          <img
+          <motion.img
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
             loading="lazy"
             src={img2}
             className="rounded-md w-full md:w-1/2  object-contain "
@@ -70,7 +65,12 @@ const About = () => {
             <h1 className="text-indigo-600 dark:text-yellow-500 text-xl font-semibold tracking-[2px] whitespace-nowrap max-md:max-w-full">
               OUR WORK
             </h1>
-            <span className="text-neutral-700 text-lg font-normal dark:text-white mt-4 max-md:max-w-full">
+            <motion.span
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: "0.5" }}
+              className="text-neutral-700 text-lg font-normal dark:text-white mt-4 max-md:max-w-full"
+            >
               At Jubba ICT Solutions, we are committed to assisting you in
               achieving your technology-related goals. Whether you're looking to
               streamline your operations, enhance your cybersecurity, or develop
@@ -78,7 +78,7 @@ const About = () => {
               you succeed. Our dedicated team of ICT professionals is ready to
               work closely with you to understand your specific needs and create
               a customized plan to address them.
-            </span>
+            </motion.span>
           </div>
         </div>
 

@@ -35,21 +35,64 @@ const Footer = () => {
           <div className=" flex flex-col sm:flex-row sm:justify-between dark:text-white flex-wrap gap-5 items-start  ">
             <section className="flex flex-col gap-4 ">
               <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
-                Company
+                Navigation Links
               </h1>
               <ul className="flex flex-col space-y-4">
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  <Link to="/about" onClick={() => setCurrentPage("about")}>
-                    About
+                <li className="text-slate-900/70  cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/"
+                    onClick={() => {
+                      setCurrentPage("home"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    Home page
                   </Link>
                 </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  <Link to="/contact" onClick={() => setCurrentPage("contact")}>
-                    Contact
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/about"
+                    onClick={() => {
+                      setCurrentPage("about"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    About Us
                   </Link>
                 </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Careers
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/services"
+                    onClick={() => {
+                      setCurrentPage("services"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/contact"
+                    onClick={() => {
+                      setCurrentPage("contact"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    Contact US
+                  </Link>
                 </li>
               </ul>
             </section>
@@ -59,31 +102,75 @@ const Footer = () => {
                 Information
               </h1>
               <ul className="flex flex-col space-y-4">
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
                   FAQ
                 </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Blog
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  Testimonials
                 </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Support
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/contact"
+                    onClick={() => {
+                      setCurrentPage("contact"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    Support
+                  </Link>
                 </li>
               </ul>
             </section>
 
             <section className="flex flex-col gap-4 ">
               <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
-                Legal
+                Company
               </h1>
               <ul className="flex flex-col space-y-4">
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Privacy & Policy
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/about"
+                    onClick={() => {
+                      setCurrentPage("about"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    About
+                  </Link>
                 </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Terms
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/contact"
+                    onClick={() => {
+                      setCurrentPage("contact"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    Contact
+                  </Link>
                 </li>
-                <li className="text-slate-900/50 cursor-pointer dark:text-white/50 font-medium">
-                  Privacy
+                <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
+                  <Link
+                    to="/services"
+                    onClick={() => {
+                      setCurrentPage("services"),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth",
+                        });
+                    }}
+                  >
+                    Services
+                  </Link>
                 </li>
               </ul>
             </section>

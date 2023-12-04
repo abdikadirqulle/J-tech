@@ -36,7 +36,6 @@ const Contact = () => {
   const onSubmit = async (data) => {
     const { name, email, subject, message } = data;
     try {
-      console.log("data", data);
       toast.success(
         `Thank  you for reaching out! I'll be in touch shortly to discuss your inquiry.`,
         {

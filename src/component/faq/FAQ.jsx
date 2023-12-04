@@ -1,36 +1,38 @@
-import Faqs from "./Faqs"
+import Faqs from "./Faqs";
 const FAQ = () => {
-
   const AllFAQ = [
     {
-      id : "1",
+      id: "1",
       title: "How can your ICT solutions benefit my business?",
-      subtitle: "We provide a comprehensive range of ICT solutions including but not limited to software development, network infrastructure setup, cybersecurity solutions, cloud services, and consultancy tailored to your specific business needs.",
+      subtitle:
+        "We provide a comprehensive range of ICT solutions including but not limited to software development, network infrastructure setup, cybersecurity solutions, cloud services, and consultancy tailored to your specific business needs.",
     },
     {
-      id : "2",
+      id: "2",
       title: "What industries do you specialize in?",
-      subtitle: "We cater to a diverse range of industries, including but not limited to healthcare, finance, manufacturing, retail, and education. Our solutions are adaptable and customizable to suit the unique demands of various sectors",
+      subtitle:
+        "We cater to a diverse range of industries, including but not limited to healthcare, finance, manufacturing, retail, and education. Our solutions are adaptable and customizable to suit the unique demands of various sectors",
     },
     {
-      id : "3",
+      id: "3",
       title: "How do you ensure the security of your ICT solutions?",
-      subtitle: "Security is a top priority. We implement robust cybersecurity measures, conduct regular assessments, and adhere to industry best practices to safeguard your data and infrastructure against evolving threats.",
+      subtitle:
+        "Security is a top priority. We implement robust cybersecurity measures, conduct regular assessments, and adhere to industry best practices to safeguard your data and infrastructure against evolving threats.",
     },
     {
-      id : "4",
-      title: "Can you assist in the integration of ICT solutions with our existing systems?  ",
-      subtitle: "Absolutely. We specialize in seamless integration. Our team will work closely with you to ensure a smooth integration process, minimizing disruptions while leveraging your current infrastructure.",
+      id: "4",
+      title:
+        "Can you assist in the integration of ICT solutions with our existing systems?  ",
+      subtitle:
+        "Absolutely. We specialize in seamless integration. Our team will work closely with you to ensure a smooth integration process, minimizing disruptions while leveraging your current infrastructure.",
     },
     {
-      id : "5",
+      id: "5",
       title: "How can I get started with your ICT solutions?",
-      subtitle: " Getting started is simple! Reach out to us through our contact page, and our team will connect with you to discuss your needs, provide insights, and begin the journey toward implementing the right ICT solutions for your business.",
+      subtitle:
+        " Getting started is simple! Reach out to us through our contact page, and our team will connect with you to discuss your needs, provide insights, and begin the journey toward implementing the right ICT solutions for your business.",
     },
-   
   ];
-
-
 
   return (
     <div>
@@ -58,19 +60,27 @@ const FAQ = () => {
         <div>
           <div className="flex flex-col gap-4">
             {AllFAQ.map((faq, e) => (
-              <Faqs title={faq.title} subtitle={faq.subtitle}  id={faq.id} key={faq.id}/>
+              <Faqs
+                title={faq.title}
+                subtitle={faq.subtitle}
+                id={faq.id}
+                key={faq.id}
+              />
             ))}
           </div>
         </div>
         <p className="text-md font-light text-[15px] dark:text-white ">
           If you need further information,{" "}
-          <a href="#contact" className="font-semibold text-secondary dark:text-yellow-500 ">
+          <a
+            href="#contact"
+            className="font-semibold text-secondary dark:text-yellow-500 "
+          >
             please contact us.
           </a>
         </p>
       </div>
     </div>
   );
-}
+};
 
-export default FAQ
+export default FAQ;
