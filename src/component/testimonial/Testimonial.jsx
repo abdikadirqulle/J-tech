@@ -3,34 +3,62 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa6";
 import { IoPersonCircleSharp } from "react-icons/io5";
 
+import duralAli from "../../assets/images/testimial img/duranliAli.jpg";
+import daadaa from "../../assets/images/testimial img/daadaa.jpg";
+import mcHadouda from "../../assets/images/testimial img/hamouda.jpg";
+
 const Testimonial = () => {
   const AllTestimonial = [
     {
       contact:
         "Working with Jubba ICT Solutions was a strategic decision for our business. Their consultancy services played a pivotal role in our digital transformation journey. Their insights, dedication, and ability to execute complex projects were instrumental in achieving our objectives.",
-      image: <IoPersonCircleSharp className="w-9 h-10" />,
+      image: daadaa,
       title: "Abdikadir qulle",
       subtitle: "Full stack developer",
-      fbIcon: <FaFacebook className="cursor-pointer w-6 h-6" />,
-      XICon: <BsTwitterX className="cursor-pointer w-5 h-5" />,
+      fbIcon: (
+        <a href="https://www.facebook.com/akrm.quule" target="_blank">
+          <FaFacebook className="cursor-pointer w-6 h-6" />
+        </a>
+      ),
+      XICon: (
+        <a href="https://twitter.com/Daadaa_33" target="_blank">
+          <BsTwitterX className="cursor-pointer w-5 h-5" />
+        </a>
+      ),
     },
     {
       contact:
         "We engaged Jubba ICT Solutions for our software modernization project, and the results were phenomenal! Their innovative approach, coupled with seamless integration of new technologies, revitalized our systems and streamlined our processes. Their dedication and expertise exceeded our expectations.",
-      image: <IoPersonCircleSharp className="cursor-pointer w-9 h-10" />,
-      title: "Duran Ali",
-      subtitle: "Software engineer",
-      fbIcon: <FaFacebook className="cursor-pointer w-6 h-6" />,
-      XICon: <BsTwitterX className="cursor-pointer w-5 h-5" />,
+      image: duralAli,
+      title: "Duraan Ali",
+      subtitle: "Software Engineer, Founder & Mentor",
+      fbIcon: (
+        <a href="https://www.facebook.com/duraanali" target="_blank">
+          <FaFacebook className="cursor-pointer w-6 h-6" />
+        </a>
+      ),
+      XICon: (
+        <a href="https://twitter.com/duraanali522" target="_blank">
+          <BsTwitterX className="cursor-pointer w-5 h-5" />
+        </a>
+      ),
     },
     {
       contact:
         "We partnered with Jubba ICT Solutions to develop our IoT platform, and the collaboration was exceptional. Their team's in-depth knowledge and attention to detail ensured a scalable and robust solution. Their commitment to delivering on time and within budget made the entire process smooth and efficient.",
-      image: <IoPersonCircleSharp className="cursor-pointer w-9 h-10" />,
-      title: "Emily Chen",
-      subtitle: " Smart Connect IoT",
-      fbIcon: <FaFacebook className="cursor-pointer w-6 h-6" />,
-      XICon: <BsTwitterX className="cursor-pointer w-5 h-5" />,
+      image: mcHadouda,
+      title: "Mc Hamouda",
+      subtitle: "Online educator 🧑‍🏫 dugsiiye.com, building imaginface.ai",
+      fbIcon: (
+        <a href="https://www.facebook.com/mchamoudadev" target="_blank">
+          <FaFacebook className="cursor-pointer w-6 h-6" />
+        </a>
+      ),
+      XICon: (
+        <a href="https://twitter.com/mchamoudadev" target="_blank">
+          <BsTwitterX className="cursor-pointer w-5 h-5" />
+        </a>
+      ),
     },
   ];
   return (
@@ -56,7 +84,11 @@ const Testimonial = () => {
               </p>
               <div className="flex  flex-col  gap- mt-14 max-md:mt-10">
                 <div className="flex grow  flex-col">
-                  {testimonial.image}
+                  <img
+                    src={testimonial.image}
+                    alt=""
+                    className="object-contain rounded-full w-14"
+                  />
                   <h3 className="text-black text-base font-medium leading-6 tracking-normal self-stretch mt-4">
                     {testimonial.title}
                   </h3>
