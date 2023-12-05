@@ -37,7 +37,7 @@ const Footer = () => {
           <div className=" flex flex-col sm:flex-row sm:justify-between dark:text-white flex-wrap gap-5 items-start  ">
             <section className="flex flex-col gap-4 ">
               <h1 className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
-                Navigation Links
+                Explore
               </h1>
               <ul className="flex flex-col space-y-4">
                 <li className="text-slate-900/70  cursor-pointer dark:text-white/50 font-medium">
@@ -51,7 +51,7 @@ const Footer = () => {
                         });
                     }}
                   >
-                    Home page
+                    Home
                   </Link>
                 </li>
                 <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
@@ -65,7 +65,7 @@ const Footer = () => {
                         });
                     }}
                   >
-                    About Us
+                    About
                   </Link>
                 </li>
                 <li className="text-slate-900/70 cursor-pointer dark:text-white/50 font-medium">
@@ -93,7 +93,7 @@ const Footer = () => {
                         });
                     }}
                   >
-                    Contact US
+                    Contact
                   </Link>
                 </li>
               </ul>
