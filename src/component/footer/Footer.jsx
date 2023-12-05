@@ -180,7 +180,7 @@ const Footer = () => {
         </div>
 
         {/* two */}
-        <div className=" flex flex-col gap-2">
+        <div className=" flex flex-col gap-6">
           <div className="flex  items-stretch gap-6 ml-2.5 mt-3.5 self-start max-md:justify-center">
             <a target="_blank" href="http://www.facebook.com">
               <FaFacebook className=" dark:text-white cursor-pointer w-6 h-6" />
@@ -198,8 +198,9 @@ const Footer = () => {
               <FaXTwitter className=" dark:text-white cursor-pointer w-6 h-6" />
             </a>
           </div>
-          <p className="text-indigo-600 dark:text-white/50 text-lg font-medium self-stretch whitespace-nowrap max-md:max-w-full">
-            © 2023 Jubba ICT solutions, Inc.
+          <p className="text-indigo-600 dark:text-white/50 text-sm font- text-center">
+            Copyright © 2023 Recent Jubba ICT solutions.
+            {/* All Rights Reserved ByRecent IT */}
           </p>
         </div>
       </div>

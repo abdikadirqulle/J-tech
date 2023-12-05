@@ -135,9 +135,18 @@ const Header = () => {
               }
             />
           )}
-          <Link to="/contact" onClick={() => setCurrentPage("contact")}>
-            <button className="text-white hidden hover:scale-95 duration-500 md:flex text-center text-[12px] font-medium   bg-secondary   px-5 py-2 rounded-lg">
-              Contact Us
+          <Link
+            to="/contact"
+            onClick={() => {
+              setCurrentPage("contact"),
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth", // Smooth scroll behavior
+                });
+            }}
+          >
+            <button className="text-white hidden hover:scale-95 duration-500 md:flex text-center text-[12px] font-medium   bg-secondary   px-5 py-2 rounded-full">
+              Get Started
             </button>
           </Link>
           <div className="md:hidden flex gap-3 items-center ">
@@ -212,16 +221,17 @@ const Header = () => {
                   <Link
                     to="/contact"
                     onClick={() => {
-                      setCurrentPage("contact"), setShowMenu(false);
+                      setCurrentPage("contact"),
+                        setShowMenu(false),
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth", // Smooth scroll behavior
+                        });
                     }}
-                    className="p-5"
+                    className="text-purple-50 cursor-pointer text-center text-base
+                      font-medium leading-4 items-center bg-indigo-600 self-stretch mt-5 px-5 py-5 hover:scale-95 duration-100 rounded-full"
                   >
-                    <button
-                      className="text-purple-50 cursor-pointer text-center text-base
-                    font-medium leading-4 items-center bg-indigo-600 self-stretch mt-5 px-5 py-5 hover:scale-95 duration-100 rounded-md"
-                    >
-                      Contact Us
-                    </button>
+                    Get Started
                   </Link>
                 </div>
               </div>

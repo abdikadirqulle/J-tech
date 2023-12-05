@@ -75,7 +75,7 @@ const Home = () => {
               </div>
               <Link to="/contact" onClick={handelStart}>
                 <button className="text-white shadow text-xl font-medium hover:bg-blue-600 duration-100 leading-4 items-center bg-secondary w-[172px] max-w-full mt-10 px-6 py-5 rounded-[8px] max-md:mt-10">
-                  Contact Us
+                  Get Started
                 </button>
               </Link>
             </div>
