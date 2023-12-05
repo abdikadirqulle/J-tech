@@ -6,16 +6,18 @@ import { FaFacebook } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
 
 import Logo from "../../assets/images/jubbaLogo.png";
+import DLogo from "../../assets/images/jubbaDarkLogo.png";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/Context";
 
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-};
 const Footer = () => {
+  const { theme } = useAuth();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const { currentPage, setCurrentPage } = useAuth();
   return (
     <div className="w-full dark:bg-blue-950 bg-blue-50 p-2 pb-4">
@@ -25,7 +27,7 @@ const Footer = () => {
           {/* img */}
           <Link to="/" className="">
             <img
-              src={Logo}
+              src={theme === "light" ? Logo : Logo}
               alt=""
               className="object-contain w-28 "
               onClick={scrollToTop}

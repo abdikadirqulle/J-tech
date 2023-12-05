@@ -5,6 +5,7 @@ import { MdClose } from "react-icons/md";
 import { FiSun } from "react-icons/fi";
 import { FiMoon } from "react-icons/fi";
 import Logo from "../../assets/images/jubbaLogo.png";
+import DLogo from "../../assets/images/jubbaDarkLogo.png";
 import { useAuth } from "../../context/Context";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -64,7 +65,7 @@ const Header = () => {
       <div className="relative flex justify-between items-center gap-  px-5 ">
         <Link to="/" className=" cursor-pointer my-auto">
           <img
-            src={Logo}
+            src={theme === "light" ? Logo : Logo}
             alt=""
             className="object-contain object-center  w-14"
             onClick={scrollToTop}

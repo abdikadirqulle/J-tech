@@ -1,10 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       textColor: {
@@ -21,7 +18,8 @@ export default {
         secondaryA: "()",
         tertiary: "()",
         dark: "blue-950",
-        gradient: "background: rgb(74,58,255),  background: linear-gradient(123deg, rgba(74,58,255,1) 0%, rgba(55,39,233,1) 98%);"
+        gradient:
+          "background: rgb(74,58,255),  background: linear-gradient(123deg, rgba(74,58,255,1) 0%, rgba(55,39,233,1) 98%);",
       },
       borderColor: {
         primary: "#FCF7FF",
@@ -47,4 +45,4 @@ export default {
     },
   },
   plugins: [],
-}
+};

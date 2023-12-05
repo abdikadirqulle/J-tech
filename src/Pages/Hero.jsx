@@ -12,13 +12,6 @@ import { useAuth } from "../context/Context";
 
 const Hero = () => {
   const { currentPage, setCurrentPage } = useAuth();
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Smooth scroll behavior
-    });
-    setCurrentPage("home");
-  }, []);
 
   return (
     <div className="">
