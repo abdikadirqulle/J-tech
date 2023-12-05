@@ -198,9 +198,9 @@ const Footer = () => {
               <FaXTwitter className=" dark:text-white cursor-pointer w-6 h-6" />
             </a>
           </div>
-          <p className="text-indigo-600 dark:text-white/50 text-sm font- text-center">
-            Copyright © 2023 Recent Jubba ICT solutions.
-            {/* All Rights Reserved ByRecent IT */}
+          <p className="text-indigo-600 dark:text-white/50 text-sm ">
+            Copyright © 2023 Jubba ICT solutions . All Rights Reserved By Jubba
+            ICT
           </p>
         </div>
       </div>
