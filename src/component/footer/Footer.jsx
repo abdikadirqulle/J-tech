@@ -198,7 +198,7 @@ const Footer = () => {
               <FaXTwitter className=" dark:text-white cursor-pointer w-6 h-6" />
             </a>
           </div>
-          <p className="text-indigo-600 dark:text-white/50 text-sm ">
+          <p className="text-indigo-600 dark:text-white/50 text-sm text-center sm:text-start">
             Copyright © 2023 Jubba ICT solutions . All Rights Reserved By Jubba
             ICT
           </p>
