@@ -48,7 +48,19 @@ const Testimonial = () => {
         "We partnered with Jubba ICT Solutions to develop our IoT platform, and the collaboration was exceptional. Their team's in-depth knowledge and attention to detail ensured a scalable and robust solution. Their commitment to delivering on time and within budget made the entire process smooth and efficient.",
       image: mcHadouda,
       title: "Mc Hamouda",
-      subtitle: "Online educator 🧑‍🏫 dugsiiye.com, building imaginface.ai",
+      subtitle: (
+        <p>
+          Co-Founder @{" "}
+          <a
+            href="https://imaginface.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-700 font-semibold hover:underline"
+          >
+            imaginface.ai
+          </a>
+        </p>
+      ),
       fbIcon: (
         <a href="https://www.facebook.com/mchamoudadev" target="_blank">
           <FaFacebook className="cursor-pointer w-6 h-6" />
@@ -78,11 +90,11 @@ const Testimonial = () => {
             className=" shadow-lg bg-[#F5F5FE] rounded-md  flex grow   p-6 max-md:mt-8 max-md:px-5"
             key={e}
           >
-            <div>
+            <div className="flex flex-col space-y-10">
               <p className="text-black text-lg leading-7">
                 &quot;{testimonial.contact} &quot;
               </p>
-              <div className="flex  flex-col  gap- mt-14 max-md:mt-10">
+              <div className="flex  flex-col  gap-3">
                 <div className="flex grow  flex-col">
                   <img
                     src={testimonial.image}
